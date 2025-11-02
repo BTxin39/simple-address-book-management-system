@@ -22,42 +22,42 @@ struct books
 
 void show_menu(){
     cout<<endl;
-    cout<<"help\tå¸®åŠ©"<<endl;
-    cout<<"add\tæ·»åŠ è”ç³»äºº"<<endl;
-    cout<<"del\tåˆ é™¤è”ç³»äºº"<<endl;
-    cout<<"find\tæŸ¥æ‰¾è”ç³»äºº"<<endl;
-    cout<<"show\tæ˜¾ç¤ºè”ç³»äºº"<<endl;
-    cout<<"amend\tä¿®æ”¹è”ç³»äºº"<<endl;
-    cout<<"clear\tæ¸…ç©ºåˆ—è¡¨"<<endl;
-    cout<<"over\tå…³é—­ç¨‹åº"<<endl;
+    cout<<"help\t°ïÖú"<<endl;
+    cout<<"add\tÌí¼ÓÁªÏµÈË"<<endl;
+    cout<<"del\tÉ¾³ıÁªÏµÈË"<<endl;
+    cout<<"find\t²éÕÒÁªÏµÈË"<<endl;
+    cout<<"show\tÏÔÊ¾ÁªÏµÈË"<<endl;
+    cout<<"amend\tĞŞ¸ÄÁªÏµÈË"<<endl;
+    cout<<"clear\tÇå¿ÕÁĞ±í"<<endl;
+    cout<<"over\t¹Ø±Õ³ÌĞò"<<endl;
     cout<<endl;
 }
 
 void add(books * abs){
     if (abs->size==max)
     {
-        cout<<"è®°ä¸ä¸‹æ›´å¤šä¸œè¥¿äº†å–µ"<<endl;
+        cout<<"¼Ç²»ÏÂ¸ü¶à¶«Î÷ÁËß÷"<<endl;
         return;
     }
     string name,sex,telephone,email,address;
     string temp="1";
     while (temp!="0"){
-        cout<<"å§“åï¼š";
+        cout<<"ĞÕÃû£º";
         cin>>name;
-        cout<<"æ€§åˆ«ï¼š";
+        cout<<"ĞÔ±ğ£º";
         cin>>sex;
-        cout<<"ç”µè¯ï¼š";
+        cout<<"µç»°£º";
         cin>>telephone;
-        cout<<"é‚®ç®±ï¼š";
+        cout<<"ÓÊÏä£º";
         cin>>email;
-        cout<<"åœ°å€ï¼š";
+        cout<<"µØÖ·£º";
         cin>>address;
-        cout<<endl<<"ä¸»äººè¯·ç¡®è®¤~"<<endl<<"å§“åï¼š\t"<<name
-            <<endl<<"æ€§åˆ«ï¼š\t"<<sex
-            <<endl<<"ç”µè¯ï¼š\t"<<telephone
-            <<endl<<"é‚®ç®±ï¼š\t"<<email
-            <<endl<<"åœ°å€ï¼š\t"<<address
-            <<endl<<"æ²¡é—®é¢˜è¯·è¾“å…¥0å–µ~";
+        cout<<endl<<"Ö÷ÈËÇëÈ·ÈÏ~"<<endl<<"ĞÕÃû£º\t"<<name
+            <<endl<<"ĞÔ±ğ£º\t"<<sex
+            <<endl<<"µç»°£º\t"<<telephone
+            <<endl<<"ÓÊÏä£º\t"<<email
+            <<endl<<"µØÖ·£º\t"<<address
+            <<endl<<"Ã»ÎÊÌâÇëÊäÈë0ß÷~";
         cin>>temp;
         if(temp=="0"){
             abs->array[abs->size].name=name;
@@ -66,27 +66,27 @@ void add(books * abs){
             abs->array[abs->size].email=email;
             abs->array[abs->size].address=address;
             abs->size++;
-            cout<<"å·²å½•å…¥"<<name<<"çš„ä¿¡æ¯"<<endl;
+            cout<<"ÒÑÂ¼Èë"<<name<<"µÄĞÅÏ¢"<<endl;
             break;
         }
-        cout<<endl<<"è¯·é‡æ–°å½•å…¥ä¿¡æ¯"<<endl;
+        cout<<endl<<"ÇëÖØĞÂÂ¼ÈëĞÅÏ¢"<<endl;
     }
     
 }
 
 void show(books *abs){
     if(abs->size==0){
-        cout<<endl<<"ä¸»äººä½ æ˜¯æ²¡æœ‰æœ‹å‹å—"<<endl;
+        cout<<endl<<"Ö÷ÈËÄãÊÇÃ»ÓĞÅóÓÑÂğ"<<endl;
         return;
     }
     else{
         for (int i = 0; i < abs->size; i++)
         {
-            cout<<"é€šè®¯äºº"<<i+1<<endl<<"å§“åï¼š\t"<<abs->array[i].name
-                <<endl<<"æ€§åˆ«ï¼š\t"<<abs->array[i].sex
-                <<endl<<"ç”µè¯ï¼š\t"<<abs->array[i].telephone
-                <<endl<<"é‚®ç®±ï¼š\t"<<abs->array[i].email
-                <<endl<<"åœ°å€ï¼š\t"<<abs->array[i].address<<endl<<endl;
+            cout<<"Í¨Ñ¶ÈË"<<i+1<<endl<<"ĞÕÃû£º\t"<<abs->array[i].name
+                <<endl<<"ĞÔ±ğ£º\t"<<abs->array[i].sex
+                <<endl<<"µç»°£º\t"<<abs->array[i].telephone
+                <<endl<<"ÓÊÏä£º\t"<<abs->array[i].email
+                <<endl<<"µØÖ·£º\t"<<abs->array[i].address<<endl<<endl;
         }
         
     }
@@ -94,30 +94,30 @@ void show(books *abs){
 }
 
 void del(books *abs){
-    cout<<"ä¸»äººè¦åˆ é™¤ç¬¬å‡ ä¸ªè”ç³»äºº"<<endl;
+    cout<<"Ö÷ÈËÒªÉ¾³ıµÚ¼¸¸öÁªÏµÈË"<<endl;
     int num;
     cin>>num;
     if (num < 1 || num > abs->size)
     {
-        cout<<"æŸ¥æ— æ­¤äººå–µ~"<<endl;
+        cout<<"²éÎŞ´ËÈËß÷~"<<endl;
         return;
     }
     
-    cout<<endl<<"æ˜¯ä¸‹é¢è¿™ä¸ªäººç±»å—"
-        <<endl<<"å§“åï¼š\t"<<abs->array[num-1].name
-        <<endl<<"æ€§åˆ«ï¼š\t"<<abs->array[num-1].sex
-        <<endl<<"ç”µè¯ï¼š\t"<<abs->array[num-1].telephone
-        <<endl<<"é‚®ç®±ï¼š\t"<<abs->array[num-1].email
-        <<endl<<"åœ°å€ï¼š\t"<<abs->array[num-1].address
-        <<"æ˜¯è¯·è¾“å…¥0å–µ~"<<endl;
+    cout<<endl<<"ÊÇÏÂÃæÕâ¸öÈËÀàÂğ"
+        <<endl<<"ĞÕÃû£º\t"<<abs->array[num-1].name
+        <<endl<<"ĞÔ±ğ£º\t"<<abs->array[num-1].sex
+        <<endl<<"µç»°£º\t"<<abs->array[num-1].telephone
+        <<endl<<"ÓÊÏä£º\t"<<abs->array[num-1].email
+        <<endl<<"µØÖ·£º\t"<<abs->array[num-1].address
+        <<"ÊÇÇëÊäÈë0ß÷~"<<endl;
     int temp=1;
     cin>>temp;
     if (temp!=0)
     {
-        cout<<"å–æ¶ˆåˆ é™¤"<<endl;
+        cout<<"È¡ÏûÉ¾³ı"<<endl;
         return;
     }
-    cout<<"æ­£åœ¨ä¸ºä¸»äººåˆ é™¤~"<<endl;
+    cout<<"ÕıÔÚÎªÖ÷ÈËÉ¾³ı~"<<endl;
     for (int i = num-1; i < abs->size-1; i++)
     {
         abs->array[i].name=abs->array[i+1].name;
@@ -133,52 +133,52 @@ void del(books *abs){
     abs->array[abs->size-1].email.clear();
     abs->array[abs->size-1].address.clear();
     abs->size--;
-    cout<<"åˆ æ‰äº†å–µ"<<endl;
+    cout<<"É¾µôÁËß÷"<<endl;
 }
 
 void amend(books *abs){
-    cout<<"ä¸»äººè¦ä¿®æ”¹ç¬¬å‡ ä¸ªè”ç³»äººå–µ~"<<endl;
+    cout<<"Ö÷ÈËÒªĞŞ¸ÄµÚ¼¸¸öÁªÏµÈËß÷~"<<endl;
     int num;
     cin>>num;
     if (num < 1 || num > abs->size)
     {
-        cout<<"æŸ¥æ— æ­¤äººå–µ~"<<endl;
+        cout<<"²éÎŞ´ËÈËß÷~"<<endl;
         return;
     }
     
-    cout<<endl<<"æ˜¯ä¸‹é¢è¿™ä¸ªäººç±»å—"
-        <<endl<<"å§“åï¼š\t"<<abs->array[num-1].name
-        <<endl<<"æ€§åˆ«ï¼š\t"<<abs->array[num-1].sex
-        <<endl<<"ç”µè¯ï¼š\t"<<abs->array[num-1].telephone
-        <<endl<<"é‚®ç®±ï¼š\t"<<abs->array[num-1].email
-        <<endl<<"åœ°å€ï¼š\t"<<abs->array[num-1].address
-        <<"æ˜¯è¯·è¾“å…¥0å–µ~";
+    cout<<endl<<"ÊÇÏÂÃæÕâ¸öÈËÀàÂğ"
+        <<endl<<"ĞÕÃû£º\t"<<abs->array[num-1].name
+        <<endl<<"ĞÔ±ğ£º\t"<<abs->array[num-1].sex
+        <<endl<<"µç»°£º\t"<<abs->array[num-1].telephone
+        <<endl<<"ÓÊÏä£º\t"<<abs->array[num-1].email
+        <<endl<<"µØÖ·£º\t"<<abs->array[num-1].address
+        <<"ÊÇÇëÊäÈë0ß÷~";
     int tempp=1;
     cin>>tempp;
     if (tempp!=0)
     {
-        cout<<"å–æ¶ˆä¿®æ”¹"<<endl;
+        cout<<"È¡ÏûĞŞ¸Ä"<<endl;
         return;
     }
     string name,sex,telephone,email,address;
     string temp="1";
     while (temp!="0"){
-        cout<<"å§“åï¼š";
+        cout<<"ĞÕÃû£º";
         cin>>name;
-        cout<<"æ€§åˆ«ï¼š";
+        cout<<"ĞÔ±ğ£º";
         cin>>sex;
-        cout<<"ç”µè¯ï¼š";
+        cout<<"µç»°£º";
         cin>>telephone;
-        cout<<"é‚®ç®±ï¼š";
+        cout<<"ÓÊÏä£º";
         cin>>email;
-        cout<<"åœ°å€ï¼š";
+        cout<<"µØÖ·£º";
         cin>>address;
-        cout<<endl<<"ä¸»äººè¯·ç¡®è®¤~"<<endl<<"å§“åï¼š\t"<<name
-            <<endl<<"æ€§åˆ«ï¼š\t"<<sex
-            <<endl<<"ç”µè¯ï¼š\t"<<telephone
-            <<endl<<"é‚®ç®±ï¼š\t"<<email
-            <<endl<<"åœ°å€ï¼š\t"<<address
-            <<endl<<"æ²¡é—®é¢˜è¯·è¾“å…¥0å–µ~";
+        cout<<endl<<"Ö÷ÈËÇëÈ·ÈÏ~"<<endl<<"ĞÕÃû£º\t"<<name
+            <<endl<<"ĞÔ±ğ£º\t"<<sex
+            <<endl<<"µç»°£º\t"<<telephone
+            <<endl<<"ÓÊÏä£º\t"<<email
+            <<endl<<"µØÖ·£º\t"<<address
+            <<endl<<"Ã»ÎÊÌâÇëÊäÈë0ß÷~";
         cin>>temp;
         if(temp=="0"){
             abs->array[num-1].name=name;
@@ -186,43 +186,43 @@ void amend(books *abs){
             abs->array[num-1].telephone=telephone;
             abs->array[num-1].email=email;
             abs->array[num-1].address=address;
-            cout<<"å·²å½•å…¥"<<name<<"çš„ä¿¡æ¯"<<endl;
+            cout<<"ÒÑÂ¼Èë"<<name<<"µÄĞÅÏ¢"<<endl;
             break;
         }
-        cout<<endl<<"è¯·é‡æ–°å½•å…¥ä¿¡æ¯"<<endl;
+        cout<<endl<<"ÇëÖØĞÂÂ¼ÈëĞÅÏ¢"<<endl;
     }
 
 }
 
 void find(books *abs){
-    cout<<"ä½ è¦æ‰¾è°å–µ~"<<endl;
+    cout<<"ÄãÒªÕÒË­ß÷~"<<endl;
     string name;
     cin>>name;
     for (int i = 0; i < abs->size; i++)
     {
         if (abs->array[i].name==name)
         {
-            cout<<endl<<"å§“åï¼š\t"<<abs->array[i].name
-            <<endl<<"æ€§åˆ«ï¼š\t"<<abs->array[i].sex
-            <<endl<<"ç”µè¯ï¼š\t"<<abs->array[i].telephone
-            <<endl<<"é‚®ç®±ï¼š\t"<<abs->array[i].email
-            <<endl<<"åœ°å€ï¼š\t"<<abs->array[i].address<<endl<<endl;
+            cout<<endl<<"ĞÕÃû£º\t"<<abs->array[i].name
+            <<endl<<"ĞÔ±ğ£º\t"<<abs->array[i].sex
+            <<endl<<"µç»°£º\t"<<abs->array[i].telephone
+            <<endl<<"ÓÊÏä£º\t"<<abs->array[i].email
+            <<endl<<"µØÖ·£º\t"<<abs->array[i].address<<endl<<endl;
             return;
         }
         
     }
-    cout<<"æŸ¥æ— æ­¤äººå–µ~"<<endl;
+    cout<<"²éÎŞ´ËÈËß÷~"<<endl;
 }
 
 void clear(books *abs){
-    cout<<"ç¡®å®šè¦æ¸…é™¤å—ï¼Ÿ"<<endl<<"ç¡®è®¤è¯·è¾“å…¥0"<<endl;
+    cout<<"È·¶¨ÒªÇå³ıÂğ£¿"<<endl<<"È·ÈÏÇëÊäÈë0"<<endl;
     int a;
     cin>>a;
     if(a!=0){
-        cout<<"å–æ¶ˆæ¸…é™¤"<<endl;
+        cout<<"È¡ÏûÇå³ı"<<endl;
         return;
     }
-    cout<<"å¼€å§‹æ¸…é™¤~"<<endl;
+    cout<<"¿ªÊ¼Çå³ı~"<<endl;
     for (int i = 0; i < abs->size; i++)
     {
         abs->array[i].address.clear();
@@ -231,21 +231,21 @@ void clear(books *abs){
         abs->array[i].sex.clear();
         abs->array[i].telephone.clear();
     }
-    cout<<"æ¸…é™¤å®Œæ¯•"<<endl;
+    cout<<"Çå³ıÍê±Ï"<<endl;
 }
 /////////////////////////////////////////////////////////////////////////////////////////
 int main(){
-    cout<<"æ¬¢è¿å¯åŠ¨é€šè®¯å½•å–µ~";
+    cout<<"»¶Ó­Æô¶¯Í¨Ñ¶Â¼ß÷~";
     show_menu();
-    // help    å¸®åŠ©
-    // add     æ·»åŠ è”ç³»äºº
-    // del     åˆ é™¤è”ç³»äºº
-    // find    æŸ¥æ‰¾è”ç³»äºº
-    // amend   ä¿®æ”¹è”ç³»äºº
-    // clear   æ¸…ç©ºåˆ—è¡¨
-    // over    å…³é—­ç¨‹åº
-    //show     æ˜¾ç¤ºè”ç³»äºº
-    cout<<"æœ‰ä»€ä¹ˆæŒ‡ç¤ºçš„å–µ~";
+    // help    °ïÖú
+    // add     Ìí¼ÓÁªÏµÈË
+    // del     É¾³ıÁªÏµÈË
+    // find    ²éÕÒÁªÏµÈË
+    // amend   ĞŞ¸ÄÁªÏµÈË
+    // clear   Çå¿ÕÁĞ±í
+    // over    ¹Ø±Õ³ÌĞò
+    //show     ÏÔÊ¾ÁªÏµÈË
+    cout<<"ÓĞÊ²Ã´Ö¸Ê¾µÄß÷~";
     string opt;
     int count=0;
     books abs;
@@ -254,39 +254,39 @@ int main(){
         cin>>opt;
         if(opt=="help"){
             show_menu();
-            cout<<"è¿˜æœ‰ä»€ä¹ˆè¦å©å’çš„å–µ~";
+            cout<<"»¹ÓĞÊ²Ã´Òª·Ô¸ÀµÄß÷~";
         }
         else if(opt=="add"){
             cout<<endl;
             add(&abs);
-            cout<<endl<<"è¿˜æœ‰ä»€ä¹ˆè¦å©å’çš„å–µ~";
+            cout<<endl<<"»¹ÓĞÊ²Ã´Òª·Ô¸ÀµÄß÷~";
         }
         else if(opt=="show"){
             show(&abs);
-            cout<<"è¿˜æœ‰ä»€ä¹ˆè¦å©å’çš„å–µ~";
+            cout<<"»¹ÓĞÊ²Ã´Òª·Ô¸ÀµÄß÷~";
         }
         else if(opt=="del"){
             del(&abs);
-            cout<<"è¿˜æœ‰ä»€ä¹ˆè¦å©å’çš„å–µ~";
+            cout<<"»¹ÓĞÊ²Ã´Òª·Ô¸ÀµÄß÷~";
         }
         else if(opt=="find"){
             find(&abs);
-            cout<<"è¿˜æœ‰ä»€ä¹ˆè¦å©å’çš„å–µ~";
+            cout<<"»¹ÓĞÊ²Ã´Òª·Ô¸ÀµÄß÷~";
         }
         else if(opt=="amend"){
             amend(&abs);
-            cout<<"è¿˜æœ‰ä»€ä¹ˆè¦å©å’çš„å–µ~";
+            cout<<"»¹ÓĞÊ²Ã´Òª·Ô¸ÀµÄß÷~";
         }
         else if(opt=="clear"){
             clear(&abs);
-            cout<<"è¿˜æœ‰ä»€ä¹ˆè¦å©å’çš„å–µ~";
+            cout<<"»¹ÓĞÊ²Ã´Òª·Ô¸ÀµÄß÷~";
         }
         else if(opt=="over"){
-            cout<<endl<<"ä¸‹æ¬¡å†è§å“¦"<<endl;
+            cout<<endl<<"ÏÂ´ÎÔÙ¼ûÅ¶"<<endl;
         }
         else{
-            cout<<endl<<"å¬ä¸æ‡‚å–µpwp"<<endl;
-            cout<<"è¿˜æœ‰ä»€ä¹ˆè¦å©å’çš„å–µ~";
+            cout<<endl<<"Ìı²»¶®ß÷pwp"<<endl;
+            cout<<"»¹ÓĞÊ²Ã´Òª·Ô¸ÀµÄß÷~";
         }
     }
     abs.size=0;
